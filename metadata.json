@@ -1,0 +1,6 @@
+{
+  "name": "Multi-Tier Web Application with CI/CD",
+  "description": "Enterprise 3-Tier Web Application with React, Express REST API, MongoDB/In-Memory database layer, role-based auth, analytics dashboards, and complete CI/CD infrastructure for AWS deployment.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

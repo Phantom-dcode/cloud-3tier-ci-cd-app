@@ -1,0 +1,16 @@
+name: CD Pipeline - Orchestrated Multi-Tier Deployment
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy-frontend:
+    name: Deploy Frontend (S3 + CloudFront)
+    uses: ./.github/workflows/frontend-deploy.yml
+    secrets: inherit
+
+  deploy-backend:
+    name: Deploy Backend API (AWS EC2 + PM2)
+    uses: ./.github/workflows/backend-deploy.yml
+    secrets: inherit
