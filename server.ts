@@ -1,12 +1,9 @@
+import express from 'express';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import { createServer as createViteServer } from 'vite';
 import { createApp } from './backend/src/app.js';
 import { connectDatabase } from './backend/src/config/db.js';
 import { logger } from './backend/src/config/logger.js';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 async function start() {
   await connectDatabase();
@@ -23,7 +20,7 @@ async function start() {
     app.use(vite.middlewares);
   } else {
     logger.info('Serving static dist files in production mode...');
-    const distPath = path.join(__dirname, 'dist');
+    const distPath = path.join(process.cwd(), 'dist');
     app.use(express.static(distPath));
     app.get('*', (req, res) => {
       res.sendFile(path.join(distPath, 'index.html'));
