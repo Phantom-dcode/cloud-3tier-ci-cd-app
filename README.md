@@ -65,10 +65,6 @@ cp .env.example .env
 
 # 3. Run the integrated dev server
 npm run dev
-```
-
-Then open **http://localhost:3000** to access the dashboard.
-
 ---
 
 ## 📁 Repository Structure
